@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Africore Power</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+    }
+    .electric-glow {
+      text-shadow: 0 0 8px #FFD700, 0 0 12px #FFD700;
+    }
+    .grid-lines {
+      background-image: radial-gradient(circle at center, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .btn-electric {
+      background: linear-gradient(90deg, #FFD700, #00FF00);
+      color: #0a0a0a;
+      font-weight: bold;
+    }
+    .btn-electric:hover {
+      filter: brightness(1.2);
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <!-- Hero Section -->
+  <section class="relative w-full h-screen flex flex-col justify-center items-center text-center grid-lines">
+    <img src="logo-placeholder.png" alt="Africore Power Logo" class="w-48 animate__animated animate__fadeInDown">
+    <h1 class="text-5xl md:text-7xl mt-6 electric-glow animate__animated animate__fadeInUp">Africore Power</h1>
+    <p class="text-xl md:text-2xl mt-4 animate__animated animate__fadeInUp">Africa's Energy Core – Powering the Continent</p>
+    <a href="#services" class="btn-electric px-8 py-3 mt-8 rounded-lg inline-block animate__animated animate__pulse animate__infinite">Get a Quote</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold electric-glow mb-6">About Africore Power</h2>
+    <p class="max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">Africore Power is a leading electrical and PPE supplier across Africa, delivering reliable, innovative, and high-quality solutions for installations, maintenance, and safety. Our mission is to empower the continent with cutting-edge energy solutions and unmatched service.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-24 px-6 bg-gray-900">
+    <h2 class="text-4xl md:text-5xl font-bold electric-glow text-center mb-12">Our Services</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 transition transform duration-300">
+        <img src="service1-icon.png" alt="Electrical Installations" class="mx-auto mb-4">
+        <h3 class="text-xl font-semibold mb-2">Electrical Installations</h3>
+        <p>Professional installation services for homes, businesses, and industrial projects.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 transition transform duration-300">
+        <img src="service2-icon.png" alt="Maintenance & Repairs" class="mx-auto mb-4">
+        <h3 class="text-xl font-semibold mb-2">Maintenance & Repairs</h3>
+        <p>Reliable maintenance and repair services to keep your systems running efficiently.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 transition transform duration-300">
+        <img src="service3-icon.png" alt="PPE Supply" class="mx-auto mb-4">
+        <h3 class="text-xl font-semibold mb-2">PPE Supply & Safety</h3>
+        <p>High-quality personal protective equipment for industrial and commercial needs.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 transition transform duration-300">
+        <img src="service4-icon.png" alt="Custom Solutions" class="mx-auto mb-4">
+        <h3 class="text-xl font-semibold mb-2">Custom Solutions</h3>
+        <p>Tailored energy solutions for unique projects and large-scale operations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold electric-glow mb-6">Contact Us</h2>
+    <p class="text-lg mb-8">Reach out to Africore Power for inquiries, quotes, or partnerships.</p>
+    <form class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <input type="text" placeholder="Name" class="p-4 rounded-lg bg-gray-800 border border-gray-700 text-white">
+      <input type="email" placeholder="Email" class="p-4 rounded-lg bg-gray-800 border border-gray-700 text-white">
+      <input type="text" placeholder="Phone" class="p-4 rounded-lg bg-gray-800 border border-gray-700 text-white">
+      <input type="text" placeholder="Subject" class="p-4 rounded-lg bg-gray-800 border border-gray-700 text-white">
+      <textarea placeholder="Message" class="md:col-span-2 p-4 rounded-lg bg-gray-800 border border-gray-700 text-white h-32"></textarea>
+      <button type="submit" class="md:col-span-2 btn-electric px-6 py-3 rounded-lg font-bold">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-gray-900 text-center">
+    <p>&copy; 2026 Africore Power. All rights reserved.</p>
+    <div class="flex justify-center space-x-6 mt-4">
+      <a href="#" class="hover:text-yellow-400">Facebook</a>
+      <a href="#" class="hover:text-yellow-400">LinkedIn</a>
+      <a href="#" class="hover:text-yellow-400">Instagram</a>
+    </div>
+  </footer>
+
+</body>
+</html>
