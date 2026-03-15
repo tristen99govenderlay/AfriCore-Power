@@ -4,32 +4,159 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Africore Power</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* Basic styling; replace with your style.css for full design */
-    body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #0d0d0d; color: #fff;}
-    header, section, footer { padding: 60px 20px; text-align: center;}
-    h1, h2, h3 { margin-bottom: 20px; }
-    p { margin-bottom: 20px; }
-    .cta-btn { display: inline-block; margin: 10px; padding: 12px 30px; background: gold; color: #000; text-decoration: none; border-radius: 5px; font-weight: bold; }
-    .cta-btn:hover { background: yellow; }
-    .service-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .service-card { background: #1a1a1a; padding: 20px; border-radius: 10px; width: 250px; transition: transform 0.3s; }
-    .service-card:hover { transform: translateY(-5px); }
+    /* ----------------- GLOBAL STYLES ----------------- */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #0d0d0d;
+        color: #fff;
+        scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+        font-family: 'Arial Black', sans-serif;
+        color: gold;
+        text-shadow: 0 0 10px gold, 0 0 20px yellow;
+    }
+    p {
+        line-height: 1.6;
+    }
+    a { color: gold; text-decoration: none; transition: color 0.3s; }
+    a:hover { color: #00ff7f; }
+
+    /* ----------------- HERO SECTION ----------------- */
+    #hero {
+        background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+        padding: 100px 20px;
+        text-align: center;
+        position: relative;
+    }
+    #hero .logo { width: 250px; animation: glow 2s infinite alternate; }
+    @keyframes glow { from { filter: drop-shadow(0 0 5px gold); } to { filter: drop-shadow(0 0 20px yellow); } }
+    #hero h1 { font-size: 3em; margin-top: 20px; }
+    .cta-btn {
+        display: inline-block;
+        margin: 15px;
+        padding: 15px 35px;
+        background: gold;
+        color: #000;
+        font-weight: bold;
+        border-radius: 10px;
+        box-shadow: 0 0 15px gold;
+        transition: all 0.3s ease;
+    }
+    .cta-btn:hover {
+        background: yellow;
+        box-shadow: 0 0 25px #00ff7f, 0 0 35px gold;
+        transform: translateY(-3px);
+    }
+
+    /* ----------------- ABOUT / TEAM ----------------- */
+    #about { padding: 80px 20px; text-align: center; }
+    #about img {
+        width: 400px;
+        border-radius: 15px;
+        box-shadow: 0 0 25px gold;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    #about img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 35px #00ff7f, 0 0 25px gold;
+    }
+
+    /* ----------------- SERVICES ----------------- */
+    #services { padding: 80px 20px; background: linear-gradient(135deg, #0d0d0d, #111111); }
+    .service-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px; }
+    .service-card {
+        background: #1a1a1a;
+        padding: 25px;
+        border-radius: 15px;
+        width: 250px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 0 20px gold, 0 0 30px #00ff7f;
+    }
+    .service-card img { margin-bottom: 15px; filter: drop-shadow(0 0 5px gold); }
+
+    /* ----------------- WHY CHOOSE US ----------------- */
+    #why-choose-us { padding: 80px 20px; text-align: center; }
     .value-points { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px; }
-    .point { width: 200px; background: #1a1a1a; padding: 20px; border-radius: 10px; }
-    form input, form textarea { display: block; width: 80%; margin: 10px auto; padding: 10px; border-radius: 5px; border: none; }
-    form button { padding: 12px 30px; background: gold; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
-    form button:hover { background: yellow; }
-    footer { background: #111; color: #fff; }
-    .social-icons a img { width: 30px; margin: 5px; }
+    .point {
+        width: 200px;
+        background: #1a1a1a;
+        padding: 20px;
+        border-radius: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .point:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px gold, 0 0 25px #00ff7f;
+    }
+
+    /* ----------------- TESTIMONIALS ----------------- */
+    #testimonials { padding: 80px 20px; }
+    .testimonial-slider { max-width: 800px; margin: 0 auto; }
+    .testimonial {
+        background: #1a1a1a;
+        padding: 25px;
+        margin: 20px 0;
+        border-radius: 15px;
+        box-shadow: 0 0 20px gold;
+        transition: transform 0.3s ease;
+    }
+    .testimonial:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 25px #00ff7f, 0 0 25px gold;
+    }
+
+    /* ----------------- CONTACT ----------------- */
+    #contact { padding: 80px 20px; text-align: center; }
+    form input, form textarea {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid gold;
+        background: #0d0d0d;
+        color: #fff;
+    }
+    form button {
+        padding: 12px 30px;
+        background: gold;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 0 15px gold;
+        transition: all 0.3s ease;
+    }
+    form button:hover {
+        background: yellow;
+        box-shadow: 0 0 25px #00ff7f, 0 0 35px gold;
+    }
+
+    /* ----------------- FOOTER ----------------- */
+    footer {
+        background: #111;
+        color: #fff;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    footer a:hover { color: #00ff7f; }
+    footer .social-icons img { width: 30px; margin: 5px; transition: filter 0.3s; }
+    footer .social-icons img:hover { filter: drop-shadow(0 0 20px gold); }
   </style>
 </head>
 <body>
 
   <!-- HERO SECTION -->
   <header id="hero">
-    <img src="images/africore-logo.png" alt="Africore Power Logo" class="logo" width="200">
+    <img src="images/africore-logo.png" alt="Africore Power Logo" class="logo">
     <h1>Africa's Energy Core – Powering the Continent</h1>
     <p>Reliable Electrical Solutions | Installations | Maintenance | PPE Supply</p>
     <a href="#contact" class="cta-btn">Get a Quote</a>
@@ -44,7 +171,7 @@
       Our mission is to power communities, homes, and businesses with energy-efficient and sustainable solutions.
       With a dedicated team of certified professionals, we guarantee quality, safety, and innovation in every project.
     </p>
-    <img src="images/team-photo.jpg" alt="Africore Power Team" width="400">
+    <img src="images/team-photo.jpg" alt="Africore Power Team">
   </section>
 
   <!-- SERVICES SECTION -->
@@ -53,56 +180,56 @@
     <p>Professional Electrical Solutions for Homes, Businesses & Industries</p>
     <div class="service-grid">
       <div class="service-card">
-        <img src="images/installation-icon.png" alt="Electrical Installations" width="60">
+        <img src="images/installation-icon.png" alt="Electrical Installations">
         <h3>Electrical Installations</h3>
         <p>Safe and professional wiring, lighting, and panel installations.</p>
       </div>
       <div class="service-card">
-        <img src="images/maintenance-icon.png" alt="Maintenance & Repairs" width="60">
+        <img src="images/maintenance-icon.png" alt="Maintenance & Repairs">
         <h3>Maintenance & Repairs</h3>
         <p>Fast troubleshooting and repair for all electrical systems.</p>
       </div>
       <div class="service-card">
-        <img src="images/solar-icon.png" alt="Solar Solutions" width="60">
+        <img src="images/solar-icon.png" alt="Solar Solutions">
         <h3>Solar & Renewable Energy Solutions</h3>
         <p>Sustainable energy solutions to reduce costs and carbon footprint.</p>
       </div>
       <div class="service-card">
-        <img src="images/ppe-icon.png" alt="PPE Supply" width="60">
+        <img src="images/ppe-icon.png" alt="PPE Supply">
         <h3>Electrical PPE Supply</h3>
         <p>High-quality personal protective equipment for safety compliance.</p>
       </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US SECTION -->
+  <!-- WHY CHOOSE US -->
   <section id="why-choose-us">
     <h2>Why Choose Africore Power?</h2>
     <div class="value-points">
       <div class="point">
-        <img src="images/reliable-icon.png" alt="Reliable Service" width="50">
+        <img src="images/reliable-icon.png" alt="Reliable Service">
         <h3>Reliable & Fast Service</h3>
         <p>We respond quickly to your electrical needs.</p>
       </div>
       <div class="point">
-        <img src="images/team-icon.png" alt="Experienced Team" width="50">
+        <img src="images/team-icon.png" alt="Experienced Team">
         <h3>Experienced Team</h3>
         <p>Certified professionals with years of industry experience.</p>
       </div>
       <div class="point">
-        <img src="images/affordable-icon.png" alt="Affordable Pricing" width="50">
+        <img src="images/affordable-icon.png" alt="Affordable Pricing">
         <h3>Affordable & Transparent</h3>
         <p>No hidden costs; high-quality solutions at competitive rates.</p>
       </div>
       <div class="point">
-        <img src="images/innovation-icon.png" alt="Innovative Technology" width="50">
+        <img src="images/innovation-icon.png" alt="Innovative Technology">
         <h3>Innovative Technology</h3>
         <p>We use cutting-edge equipment and techniques.</p>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS SECTION -->
+  <!-- TESTIMONIALS -->
   <section id="testimonials">
     <h2>What Our Clients Say</h2>
     <div class="testimonial-slider">
@@ -115,7 +242,7 @@
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Get in Touch</h2>
     <p>Send us a message and we’ll get back to you fast!</p>
@@ -131,7 +258,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <img src="images/africore-logo-small.png" alt="Africore Power Logo" width="150">
+    <img src="images/africore-logo-small.png" alt="Africore Power Logo">
     <nav>
       <a href="#about">About</a> | 
       <a href="#services">Services</a> | 
