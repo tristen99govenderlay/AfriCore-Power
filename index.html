@@ -13,9 +13,10 @@
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0b0b0b;
+font-family:Segoe UI,Arial,sans-serif;
+background:#070707;
 color:white;
+scroll-behavior:smooth;
 }
 
 h1,h2,h3{
@@ -24,7 +25,8 @@ text-align:center;
 }
 
 section{
-padding:80px 20px;
+padding:90px 20px;
+border-bottom:1px solid #1a1a1a;
 }
 
 img{
@@ -37,18 +39,20 @@ height:auto;
 nav{
 position:sticky;
 top:0;
-background:#111;
-padding:15px;
+background:#0f0f0f;
 display:flex;
 justify-content:center;
-gap:30px;
+gap:40px;
+padding:18px;
 z-index:1000;
+box-shadow:0 2px 10px black;
 }
 
 nav a{
 color:gold;
-font-weight:bold;
 text-decoration:none;
+font-weight:bold;
+letter-spacing:1px;
 }
 
 nav a:hover{
@@ -59,12 +63,28 @@ color:#00ff88;
 
 #hero{
 text-align:center;
-padding:120px 20px;
-background:linear-gradient(#0b0b0b,#1a1a1a);
+padding:140px 20px;
+background:radial-gradient(circle at center,#1a1a1a,#050505);
+position:relative;
+overflow:hidden;
+}
+
+#hero::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:linear-gradient(45deg,transparent,rgba(255,215,0,0.1),transparent);
+animation:energy 6s linear infinite;
+}
+
+@keyframes energy{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
 
 .logo{
-width:220px;
+width:230px;
 margin-bottom:20px;
 }
 
@@ -77,24 +97,21 @@ color:black;
 border-radius:8px;
 font-weight:bold;
 text-decoration:none;
+transition:0.3s;
 }
 
 .cta:hover{
-background:yellow;
+background:#00ff88;
+color:black;
 }
 
 /* ABOUT */
 
 #about{
-text-align:center;
 max-width:900px;
 margin:auto;
-}
-
-#about img{
-width:350px;
-border-radius:10px;
-margin-top:20px;
+text-align:center;
+line-height:1.6;
 }
 
 /* SERVICES */
@@ -103,22 +120,23 @@ margin-top:20px;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:25px;
+gap:30px;
 margin-top:40px;
 }
 
 .service-card{
-background:#161616;
-padding:25px;
+background:#111;
+padding:30px;
+width:260px;
 border-radius:12px;
-width:240px;
 text-align:center;
-transition:0.3s;
+transition:0.4s;
+border:1px solid #1c1c1c;
 }
 
 .service-card:hover{
-transform:translateY(-6px);
-box-shadow:0 0 20px gold;
+transform:translateY(-8px);
+box-shadow:0 0 25px gold;
 }
 
 .service-card img{
@@ -128,20 +146,20 @@ object-fit:contain;
 margin-bottom:15px;
 }
 
-/* WHY CHOOSE US */
+/* WHY CHOOSE */
 
 .points{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:20px;
+gap:25px;
 margin-top:40px;
 }
 
 .point{
-background:#161616;
-padding:20px;
-width:200px;
+background:#111;
+padding:25px;
+width:210px;
 border-radius:10px;
 text-align:center;
 }
@@ -151,14 +169,34 @@ width:70px;
 margin-bottom:10px;
 }
 
+/* PROJECT GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.gallery img{
+border-radius:10px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px gold;
+}
+
 /* TESTIMONIAL */
 
 .testimonial{
-background:#161616;
+background:#111;
 max-width:700px;
-margin:20px auto;
-padding:20px;
+margin:25px auto;
+padding:25px;
 border-radius:10px;
+text-align:center;
 }
 
 /* CONTACT */
@@ -172,7 +210,7 @@ form input, form textarea{
 width:100%;
 padding:12px;
 margin:10px 0;
-background:#0b0b0b;
+background:#050505;
 border:1px solid gold;
 color:white;
 border-radius:8px;
@@ -181,23 +219,42 @@ border-radius:8px;
 form button{
 background:gold;
 border:none;
-padding:12px 20px;
-font-weight:bold;
+padding:12px 25px;
 border-radius:8px;
+font-weight:bold;
 cursor:pointer;
 }
 
 form button:hover{
-background:yellow;
+background:#00ff88;
+}
+
+/* MAP */
+
+.map{
+margin-top:40px;
+border-radius:10px;
+overflow:hidden;
 }
 
 /* FOOTER */
 
 footer{
-background:#111;
-padding:40px;
+background:#0f0f0f;
+padding:50px 20px;
 text-align:center;
-margin-top:60px;
+}
+
+.footer-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+margin-top:20px;
+}
+
+.footer-grid div{
+max-width:250px;
 }
 
 .social img{
@@ -212,8 +269,9 @@ position:fixed;
 bottom:25px;
 right:25px;
 background:#25D366;
-padding:12px;
+padding:14px;
 border-radius:50%;
+box-shadow:0 0 10px black;
 }
 
 .whatsapp img{
@@ -232,6 +290,7 @@ width:35px;
 
 <a href="#about">About</a>
 <a href="#services">Services</a>
+<a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 
 </nav>
@@ -258,12 +317,11 @@ width:35px;
 <h2>About Africore Power</h2>
 
 <p>
-Africore Power delivers reliable electrical solutions for homes,
-businesses and industries across Africa. Our mission is to power
-communities with safe, efficient and innovative electrical systems.
+Africore Power provides reliable electrical services for residential,
+commercial and industrial sectors. Our mission is to power homes,
+businesses and communities with safe, efficient and innovative
+electrical solutions across Africa.
 </p>
-
-<img src="images/team-photo.jpg">
 
 </section>
 
@@ -278,129 +336,20 @@ communities with safe, efficient and innovative electrical systems.
 <div class="service-card">
 <img src="images/installation-icon.png">
 <h3>Electrical Installations</h3>
-<p>Professional electrical wiring and installations.</p>
+<p>Complete wiring and electrical installations.</p>
 </div>
 
 <div class="service-card">
 <img src="images/maintenance-icon.png">
 <h3>Maintenance</h3>
-<p>Electrical repairs and troubleshooting.</p>
+<p>Repairs, inspections and troubleshooting.</p>
 </div>
 
 <div class="service-card">
 <img src="images/solar-icon.png">
 <h3>Solar Solutions</h3>
-<p>Renewable solar energy installations.</p>
+<p>Renewable solar systems and energy solutions.</p>
 </div>
 
-<div class="service-card">
-<img src="images/ppe-icon.png">
-<h3>PPE Supply</h3>
-<p>Electrical safety equipment supply.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- WHY CHOOSE US -->
-
-<section>
-
-<h2>Why Choose Us</h2>
-
-<div class="points">
-
-<div class="point">
-<img src="images/reliable-icon.png">
-<h3>Reliable</h3>
-<p>Fast and dependable service.</p>
-</div>
-
-<div class="point">
-<img src="images/team-icon.png">
-<h3>Experienced</h3>
-<p>Certified electricians.</p>
-</div>
-
-<div class="point">
-<img src="images/affordable-icon.png">
-<h3>Affordable</h3>
-<p>Competitive pricing.</p>
-</div>
-
-<div class="point">
-<img src="images/innovation-icon.png">
-<h3>Modern</h3>
-<p>Latest technology solutions.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- TESTIMONIAL -->
-
-<section>
-
-<h2>Client Feedback</h2>
-
-<div class="testimonial">
-“Excellent service and professional installation.” – Client
-</div>
-
-<div class="testimonial">
-“Reliable electricians and quick response.” – Client
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<h2>Contact Us</h2>
-
-<form>
-
-<input placeholder="Name">
-<input placeholder="Email">
-<input placeholder="Phone">
-
-<textarea placeholder="Message"></textarea>
-
-<button>Send Message</button>
-
-</form>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-<p>© 2026 Africore Power</p>
-
-<div class="social">
-
-<a href="https://wa.me/27XXXXXXXXX" target="_blank">
-<img src="images/whatsapp-icon.png">
-</a>
-
-<a href="https://www.linkedin.com/" target="_blank">
-<img src="images/linkedin-icon.png">
-</a>
-
-</div>
-
-</footer>
-
-<!-- WHATSAPP FLOAT BUTTON -->
-
-<a class="whatsapp" href="https://wa.me/27XXXXXXXXX" target="_blank">
-<img src="images/whatsapp-icon.png">
-</a>
-
-</body>
-</html>
+<div class
 ```
