@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,22 +18,23 @@ box-sizing:border-box;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#05070f;
+font-family:Poppins;
+background:#050914;
 color:white;
+line-height:1.6;
 }
 
 header{
 position:fixed;
 top:0;
 width:100%;
+background:rgba(0,0,0,0.8);
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 8%;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
 z-index:1000;
+backdrop-filter:blur(10px);
 }
 
 .logo{
@@ -45,68 +47,66 @@ gap:10px;
 height:55px;
 }
 
-.logo h1{
-font-family:'Orbitron';
-font-size:22px;
+.logo h2{
+font-family:Orbitron;
 color:#FFD700;
-letter-spacing:2px;
 }
 
 nav a{
-margin-left:30px;
-text-decoration:none;
+margin-left:25px;
 color:white;
+text-decoration:none;
 font-weight:500;
 transition:0.3s;
 }
 
 nav a:hover{
-color:#00bfff;
+color:#00BFFF;
 }
 
 .hero{
 height:100vh;
 display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
 flex-direction:column;
-background:radial-gradient(circle at center,#0b1533,#02040b);
-padding:100px 20px;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:radial-gradient(circle,#0b1a3a,#02040b);
+padding-top:80px;
 }
 
 .hero img{
-width:280px;
-margin-bottom:25px;
+width:260px;
+margin-bottom:20px;
 }
 
-.hero h2{
-font-size:48px;
-font-family:'Orbitron';
+.hero h1{
+font-size:52px;
+font-family:Orbitron;
 color:#FFD700;
-margin-bottom:10px;
 }
 
 .hero p{
-font-size:18px;
 max-width:650px;
-margin-bottom:35px;
+margin:20px 0;
+font-size:18px;
 }
 
 .btn{
+display:inline-block;
 padding:14px 35px;
-background:linear-gradient(90deg,#FFD700,#00bfff);
-border:none;
-border-radius:40px;
+background:linear-gradient(90deg,#FFD700,#00BFFF);
 color:black;
-font-weight:600;
+border-radius:40px;
 text-decoration:none;
+font-weight:600;
+margin-top:15px;
 transition:0.3s;
 }
 
 .btn:hover{
 transform:scale(1.05);
-box-shadow:0 0 15px #00bfff;
+box-shadow:0 0 20px #00BFFF;
 }
 
 section{
@@ -115,10 +115,24 @@ padding:100px 8%;
 
 .section-title{
 text-align:center;
-font-family:'Orbitron';
+font-family:Orbitron;
 font-size:36px;
 margin-bottom:60px;
 color:#FFD700;
+}
+
+.trust{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.trust div{
+background:#0b1228;
+padding:30px;
+border-radius:10px;
+border:1px solid #1c2950;
 }
 
 .services{
@@ -131,81 +145,90 @@ gap:30px;
 background:#0b1228;
 padding:35px;
 border-radius:10px;
-transition:0.4s;
-border:1px solid #1e2a50;
+border:1px solid #1c2950;
+transition:0.3s;
 }
 
 .service:hover{
 transform:translateY(-10px);
-box-shadow:0 0 25px #00bfff;
+box-shadow:0 0 25px #00BFFF;
 }
 
-.service h3{
-color:#00bfff;
-margin-bottom:10px;
-}
-
-.about{
+.gallery{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-.about img{
+.gallery img{
 width:100%;
 border-radius:10px;
 }
 
-.about p{
-line-height:1.6;
+.testimonials{
+text-align:center;
+max-width:700px;
+margin:auto;
+}
+
+.testimonial{
+margin-bottom:30px;
+}
+
+.quote-form{
+max-width:600px;
+margin:auto;
+}
+
+.quote-form input,
+.quote-form textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:none;
+border-radius:5px;
 }
 
 .contact{
 text-align:center;
 }
 
-.contact p{
-margin-bottom:30px;
-}
-
-.socials{
-margin-top:30px;
-}
-
 .socials a{
-margin:0 15px;
-font-size:22px;
+margin:10px;
 color:white;
 text-decoration:none;
-transition:0.3s;
-}
-
-.socials a:hover{
-color:#FFD700;
 }
 
 footer{
 text-align:center;
 padding:30px;
 background:#02040b;
-border-top:1px solid #1a1a1a;
 margin-top:80px;
+border-top:1px solid #222;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
 }
 
 @media(max-width:900px){
 
-.about{
-grid-template-columns:1fr;
-}
-
-.hero h2{
+.hero h1{
 font-size:36px;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -214,11 +237,12 @@ font-size:36px;
 
 <div class="logo">
 <img src="logo.png">
-<h1>AfriCore Power</h1>
+<h2>AfriCore Power</h2>
 </div>
 
 <nav>
 <a href="#services">Services</a>
+<a href="#projects">Projects</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -229,14 +253,44 @@ font-size:36px;
 
 <img src="logo.png">
 
-<h2>Powering Africa's Future</h2>
+<h1>Powering Africa's Future</h1>
 
 <p>
 Professional Electrical Installations, Electrical Maintenance,
 General Property Maintenance and PPE Supply Solutions.
 </p>
 
-<a class="btn" href="#contact">Get A Quote</a>
+<a class="btn" href="#quote">Request Quote</a>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Why Choose AfriCore Power</h2>
+
+<div class="trust">
+
+<div>
+<h3>Professional</h3>
+<p>Reliable and skilled electrical services.</p>
+</div>
+
+<div>
+<h3>Fast Response</h3>
+<p>Quick turnaround and emergency support.</p>
+</div>
+
+<div>
+<h3>Quality Work</h3>
+<p>High standard installations and repairs.</p>
+</div>
+
+<div>
+<h3>Trusted Service</h3>
+<p>Focused on customer satisfaction.</p>
+</div>
+
+</div>
 
 </section>
 
@@ -248,33 +302,57 @@ General Property Maintenance and PPE Supply Solutions.
 
 <div class="service">
 <h3>Electrical Installations</h3>
-<p>
-Residential and commercial electrical installations done safely
-and professionally.
-</p>
+<p>Residential and commercial wiring, lighting and power systems.</p>
 </div>
 
 <div class="service">
 <h3>Electrical Maintenance</h3>
-<p>
-Fault finding, repairs, upgrades, and electrical system maintenance.
-</p>
+<p>Fault finding, electrical repairs and upgrades.</p>
 </div>
 
 <div class="service">
 <h3>General Maintenance</h3>
-<p>
-Property maintenance including painting, repairs,
-and building upkeep.
-</p>
+<p>Painting, property maintenance and building repairs.</p>
 </div>
 
 <div class="service">
 <h3>PPE Supply</h3>
-<p>
-Supplying reliable personal protective equipment
-for construction and industry.
-</p>
+<p>Supplying safety equipment and protective gear.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">Recent Projects</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+<img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232">
+<img src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b">
+<img src="https://images.unsplash.com/photo-1581091870627-3ab1c44c3c6d">
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Customer Reviews</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>"Excellent service and professional work."</p>
+<strong>⭐⭐⭐⭐⭐</strong>
+</div>
+
+<div class="testimonial">
+<p>"Reliable electricians and fast response."</p>
+<strong>⭐⭐⭐⭐⭐</strong>
 </div>
 
 </div>
@@ -285,24 +363,26 @@ for construction and industry.
 
 <h2 class="section-title">About AfriCore Power</h2>
 
-<div class="about">
-
-<div>
-<p>
-AfriCore Power is a modern electrical and maintenance company focused on
-delivering high-quality workmanship across residential, commercial,
-and industrial environments.
+<p style="max-width:700px;margin:auto;text-align:center;">
+AfriCore Power provides professional electrical installations,
+maintenance services and PPE supply solutions across residential
+and commercial environments.
 </p>
 
-<br>
+</section>
 
-<p>
-Our mission is to power infrastructure across Africa through
-innovation, reliability, and professional service.
-</p>
-</div>
+<section id="quote">
 
-<img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837">
+<h2 class="section-title">Request A Quote</h2>
+
+<div class="quote-form">
+
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Email">
+<input type="text" placeholder="Phone">
+<textarea placeholder="Describe the work needed"></textarea>
+
+<a class="btn">Submit Request</a>
 
 </div>
 
@@ -314,12 +394,8 @@ innovation, reliability, and professional service.
 
 <div class="contact">
 
-<p>
-Need electrical services or maintenance work?
-Contact AfriCore Power today.
-</p>
-
-<a class="btn" href="https://wa.me/">WhatsApp Us</a>
+<p>Email: info@africorepower.co.za</p>
+<p>Phone: +27 XXX XXX XXXX</p>
 
 <div class="socials">
 
@@ -335,9 +411,11 @@ Contact AfriCore Power today.
 
 <footer>
 
-<p>© 2026 AfriCore Power. All Rights Reserved.</p>
+<p>© 2026 AfriCore Power | Electrical & Maintenance Solutions</p>
 
 </footer>
+
+<a class="whatsapp" href="https://wa.me/">WhatsApp</a>
 
 </body>
 </html>
