@@ -11,6 +11,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 <style>
 
 /* GLOBAL */
@@ -24,27 +26,20 @@ scroll-behavior:smooth;
 
 body{
 font-family:Poppins;
-background:#030712;
+background:#02050f;
 color:white;
 overflow-x:hidden;
 }
 
 /* PARTICLE BACKGROUND */
 
-#particles{
+#particles-js{
 position:fixed;
 width:100%;
 height:100%;
 top:0;
 left:0;
-background:radial-gradient(circle at 20% 20%,#0a1c4a,#02040b);
 z-index:-1;
-animation:bgmove 20s infinite alternate;
-}
-
-@keyframes bgmove{
-0%{background-position:0% 50%}
-100%{background-position:100% 50%}
 }
 
 /* NAVBAR */
@@ -56,7 +51,7 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 8%;
+padding:20px 8%;
 background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 z-index:1000;
@@ -75,7 +70,6 @@ height:50px;
 .logo h1{
 font-family:Orbitron;
 color:#FFD700;
-letter-spacing:1px;
 }
 
 nav a{
@@ -103,7 +97,7 @@ padding-top:100px;
 }
 
 .hero img{
-width:270px;
+width:280px;
 margin-bottom:25px;
 filter:drop-shadow(0 0 25px #00BFFF);
 }
@@ -118,7 +112,6 @@ color:#FFD700;
 max-width:650px;
 margin:25px auto;
 font-size:18px;
-opacity:.9;
 }
 
 .btn{
@@ -150,28 +143,6 @@ margin-bottom:60px;
 color:#FFD700;
 }
 
-/* TRUST */
-
-.trust{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
-}
-
-.trust div{
-background:#0b1228;
-padding:35px;
-border-radius:12px;
-border:1px solid #1c2950;
-text-align:center;
-transition:.3s;
-}
-
-.trust div:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px #00BFFF;
-}
-
 /* SERVICES */
 
 .services{
@@ -190,7 +161,7 @@ transition:.4s;
 
 .card:hover{
 transform:translateY(-12px);
-box-shadow:0 0 35px #00BFFF;
+box-shadow:0 0 40px #00BFFF;
 }
 
 .card h3{
@@ -206,74 +177,45 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
-.gallery img{
+.project{
+position:relative;
+overflow:hidden;
+border-radius:10px;
+}
+
+.project img{
 width:100%;
 height:230px;
 object-fit:cover;
-border-radius:10px;
 transition:.4s;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
-box-shadow:0 0 30px #00BFFF;
+.project:hover img{
+transform:scale(1.1);
 }
 
-/* STATS */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:40px;
-text-align:center;
-}
-
-.stat h3{
-font-size:46px;
-color:#FFD700;
-}
-
-/* TESTIMONIALS */
-
-.testimonials{
-max-width:700px;
-margin:auto;
-text-align:center;
-}
-
-.testimonial{
-display:none;
-font-size:19px;
-opacity:.9;
-}
-
-.testimonial.active{
-display:block;
-}
-
-/* FORM */
-
-.form{
-max-width:600px;
-margin:auto;
-}
-
-.form input,
-.form textarea{
+.overlay{
+position:absolute;
+bottom:0;
 width:100%;
-padding:13px;
-margin-bottom:15px;
-border:none;
-border-radius:6px;
+background:rgba(0,0,0,0.7);
+text-align:center;
+padding:10px;
+opacity:0;
+transition:.4s;
+}
+
+.project:hover .overlay{
+opacity:1;
 }
 
 /* FOOTER */
 
 footer{
-background:#02040b;
+background:#01030a;
 padding:60px 8%;
 text-align:center;
-border-top:1px solid #1a1a1a;
+border-top:1px solid #111;
 }
 
 footer p{
@@ -287,7 +229,7 @@ position:fixed;
 bottom:25px;
 right:25px;
 background:#25D366;
-padding:15px 22px;
+padding:16px 22px;
 border-radius:40px;
 color:white;
 font-weight:bold;
@@ -301,7 +243,7 @@ box-shadow:0 0 20px #25D366;
 
 <body>
 
-<div id="particles"></div>
+<div id="particles-js"></div>
 
 <header>
 
@@ -313,7 +255,6 @@ box-shadow:0 0 20px #25D366;
 <nav>
 <a href="#services">Services</a>
 <a href="#projects">Projects</a>
-<a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -333,36 +274,6 @@ Electrical Installations • Electrical Maintenance • Property Maintenance •
 
 </section>
 
-<section>
-
-<h2 class="title">Why Choose AfriCore Power</h2>
-
-<div class="trust">
-
-<div>
-<h3>Professional</h3>
-<p>Highly skilled electrical specialists.</p>
-</div>
-
-<div>
-<h3>Reliable</h3>
-<p>Dependable and trusted service.</p>
-</div>
-
-<div>
-<h3>Fast Response</h3>
-<p>Quick support when you need it.</p>
-</div>
-
-<div>
-<h3>Quality Work</h3>
-<p>Industry standard installations.</p>
-</div>
-
-</div>
-
-</section>
-
 <section id="services">
 
 <h2 class="title">Our Services</h2>
@@ -371,22 +282,22 @@ Electrical Installations • Electrical Maintenance • Property Maintenance •
 
 <div class="card">
 <h3>Electrical Installations</h3>
-<p>Residential and commercial electrical systems.</p>
+<p>Residential and commercial systems.</p>
 </div>
 
 <div class="card">
 <h3>Electrical Maintenance</h3>
-<p>Fault finding and system upgrades.</p>
+<p>Fault finding and upgrades.</p>
 </div>
 
 <div class="card">
 <h3>Property Maintenance</h3>
-<p>Painting and general building maintenance.</p>
+<p>Painting and general maintenance.</p>
 </div>
 
 <div class="card">
 <h3>PPE Supply</h3>
-<p>Safety gear for electrical and industrial work.</p>
+<p>Industrial and safety equipment.</p>
 </div>
 
 </div>
@@ -399,63 +310,22 @@ Electrical Installations • Electrical Maintenance • Property Maintenance •
 
 <div class="gallery">
 
+<div class="project">
 <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+<div class="overlay">Industrial Electrical Work</div>
+</div>
+
+<div class="project">
 <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232">
+<div class="overlay">Residential Installations</div>
+</div>
+
+<div class="project">
 <img src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b">
-<img src="https://images.unsplash.com/photo-1581091870627-3ab1c44c3c6d">
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">Company Stats</h2>
-
-<div class="stats">
-
-<div class="stat">
-<h3 id="projectsDone">0</h3>
-<p>Projects Completed</p>
-</div>
-
-<div class="stat">
-<h3 id="clients">0</h3>
-<p>Happy Clients</p>
-</div>
-
-<div class="stat">
-<h3 id="experience">0</h3>
-<p>Years Experience</p>
+<div class="overlay">Panel Upgrades</div>
 </div>
 
 </div>
-
-</section>
-
-<section>
-
-<h2 class="title">Client Testimonials</h2>
-
-<div class="testimonials">
-
-<p class="testimonial active">"Excellent service and professional workmanship."</p>
-<p class="testimonial">"Reliable electricians with fast response time."</p>
-<p class="testimonial">"High quality installations and great support."</p>
-
-</div>
-
-</section>
-
-<section id="about">
-
-<h2 class="title">About AfriCore Power</h2>
-
-<p style="max-width:700px;margin:auto;text-align:center;">
-AfriCore Power delivers reliable electrical installations,
-maintenance and safety supply solutions across residential
-and commercial sectors.
-</p>
 
 </section>
 
@@ -463,17 +333,10 @@ and commercial sectors.
 
 <h2 class="title">Request A Quote</h2>
 
-<div class="form">
-
 <input type="text" placeholder="Name">
 <input type="email" placeholder="Email">
 <input type="text" placeholder="Phone">
-
 <textarea placeholder="Describe the work needed"></textarea>
-
-<a class="btn">Submit Request</a>
-
-</div>
 
 </section>
 
@@ -488,41 +351,28 @@ and commercial sectors.
 
 <script>
 
-/* TESTIMONIAL SLIDER */
+/* PARTICLE SYSTEM */
 
-let index=0
-const testimonials=document.querySelectorAll(".testimonial")
-
-setInterval(()=>{
-testimonials[index].classList.remove("active")
-index=(index+1)%testimonials.length
-testimonials[index].classList.add("active")
-},4000)
-
-/* STATS COUNTER */
-
-function counter(id,max){
-
-let element=document.getElementById(id)
-let count=0
-
-let interval=setInterval(()=>{
-
-count++
-
-element.innerText=count
-
-if(count==max){
-clearInterval(interval)
+particlesJS("particles-js", {
+particles:{
+number:{value:80},
+color:{value:"#00BFFF"},
+shape:{type:"circle"},
+opacity:{value:0.5},
+size:{value:3},
+line_linked:{
+enable:true,
+distance:150,
+color:"#00BFFF",
+opacity:0.4,
+width:1
+},
+move:{
+enable:true,
+speed:2
 }
-
-},30)
-
 }
-
-counter("projectsDone",250)
-counter("clients",120)
-counter("experience",10)
+})
 
 </script>
 
