@@ -98,13 +98,14 @@ padding-top:100px;
 .hero img{
 width:300px;
 margin-bottom:30px;
-filter:drop-shadow(0 0 40px #00BFFF);
+filter:drop-shadow(0 0 60px #00BFFF);
 }
 
 .hero h2{
 font-family:Orbitron;
-font-size:60px;
+font-size:65px;
 color:#FFD700;
+text-shadow:0 0 20px #FFD700;
 }
 
 .hero p{
@@ -112,6 +113,8 @@ max-width:700px;
 margin:20px auto;
 font-size:18px;
 }
+
+/* BUTTON */
 
 .btn{
 padding:14px 40px;
@@ -155,6 +158,16 @@ margin-bottom:60px;
 color:#FFD700;
 }
 
+/* ABOUT */
+
+.about{
+max-width:900px;
+margin:auto;
+text-align:center;
+line-height:1.7;
+font-size:17px;
+}
+
 /* SERVICES */
 
 .services{
@@ -169,21 +182,11 @@ padding:40px;
 border-radius:12px;
 border:1px solid #1c2950;
 transition:.4s;
-opacity:0;
-transform:translateY(40px);
 }
 
 .card:hover{
 transform:translateY(-12px);
-box-shadow:
-0 0 25px #00BFFF,
-0 0 45px #00BFFF,
-0 0 70px rgba(0,191,255,0.4);
-}
-
-.card h3{
-color:#00BFFF;
-margin-bottom:12px;
+box-shadow:0 0 40px #00BFFF;
 }
 
 /* PROJECTS */
@@ -194,72 +197,48 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
-.project{
-position:relative;
-overflow:hidden;
-border-radius:10px;
-opacity:0;
-transform:translateY(40px);
-}
-
 .project img{
 width:100%;
 height:230px;
 object-fit:cover;
+cursor:pointer;
 transition:.4s;
 }
 
-.project:hover img{
+.project img:hover{
 transform:scale(1.1);
 }
 
-.overlay{
-position:absolute;
-bottom:0;
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
 width:100%;
-background:rgba(0,0,0,0.7);
-text-align:center;
-padding:10px;
-opacity:0;
-transition:.4s;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000;
 }
 
-.project:hover .overlay{
-opacity:1;
+.lightbox img{
+max-width:90%;
+max-height:90%;
 }
 
-/* STATS */
+/* CONTACT */
 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-text-align:center;
-}
-
-.stat h3{
-font-size:45px;
-color:#FFD700;
-}
-
-/* TESTIMONIALS */
-
-.testimonials{
+.contact-box{
 max-width:700px;
 margin:auto;
 text-align:center;
+line-height:2;
 }
 
-.testimonial{
-display:none;
-font-size:18px;
-}
-
-.testimonial.active{
-display:block;
-}
-
-/* QUOTE FORM */
+/* FORM */
 
 .quote-form{
 max-width:600px;
@@ -272,17 +251,11 @@ gap:18px;
 .quote-form input,
 .quote-form textarea{
 padding:15px;
-border:none;
 border-radius:8px;
-font-size:15px;
+border:none;
 background:#0b1228;
 color:white;
 border:1px solid #1c2950;
-}
-
-.quote-form textarea{
-height:130px;
-resize:none;
 }
 
 .quote-form input:focus,
@@ -292,17 +265,18 @@ border:1px solid #00BFFF;
 box-shadow:0 0 10px #00BFFF;
 }
 
+/* MAP */
+
+.map{
+margin-top:40px;
+}
+
 /* FOOTER */
 
 footer{
 background:#01030a;
 padding:60px 8%;
 text-align:center;
-border-top:1px solid #111;
-}
-
-footer p{
-margin-bottom:10px;
 }
 
 /* WHATSAPP */
@@ -315,24 +289,9 @@ background:#25D366;
 padding:16px 22px;
 border-radius:50px;
 color:white;
-font-weight:bold;
 text-decoration:none;
-box-shadow:
-0 0 10px #25D366,
-0 0 25px #25D366;
-transition:.3s;
-}
-
-.whatsapp:hover{
-transform:scale(1.1);
-}
-
-/* SCROLL REVEAL */
-
-.show{
-opacity:1 !important;
-transform:translateY(0) !important;
-transition:all .8s ease;
+font-weight:bold;
+box-shadow:0 0 25px #25D366;
 }
 
 </style>
@@ -344,150 +303,84 @@ transition:all .8s ease;
 <div id="particles-js"></div>
 
 <header>
-
 <div class="logo">
 <img src="logo.png">
 <h1>AfriCore Power</h1>
 </div>
 
 <nav>
+<a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </nav>
-
 </header>
 
 <section class="hero">
-
 <img src="logo.png">
-
 <h2>Powering Africa's Future</h2>
-
-<p>
-Electrical Installations • Electrical Maintenance • Property Maintenance • PPE Supply
-</p>
-
+<p>Reliable Electrical & Property Solutions</p>
 <a class="btn" href="#contact">Get Quote</a>
+</section>
 
+<section id="about">
+<h2 class="title">About Us</h2>
+<p class="about">
+AfriCore Power is a professional electrical and property maintenance company delivering reliable, high-quality services across residential and commercial sectors. We focus on safety, efficiency, and long-term solutions.
+</p>
 </section>
 
 <section id="services">
-
-<h2 class="title">Our Services</h2>
-
+<h2 class="title">Services</h2>
 <div class="services">
-
-<div class="card">
-<h3>Electrical Installations</h3>
-<p>Residential and commercial systems.</p>
+<div class="card">Electrical Installations</div>
+<div class="card">Maintenance & Repairs</div>
+<div class="card">Property Maintenance</div>
+<div class="card">PPE Supply</div>
 </div>
-
-<div class="card">
-<h3>Electrical Maintenance</h3>
-<p>Fault finding and upgrades.</p>
-</div>
-
-<div class="card">
-<h3>Property Maintenance</h3>
-<p>Painting and general maintenance.</p>
-</div>
-
-<div class="card">
-<h3>PPE Supply</h3>
-<p>Industrial and safety equipment.</p>
-</div>
-
-</div>
-
 </section>
 
 <section id="projects">
-
 <h2 class="title">Projects</h2>
-
 <div class="gallery">
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
-<div class="overlay">Industrial Electrical Work</div>
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" onclick="openImg(this.src)">
+<img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232" onclick="openImg(this.src)">
+<img src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b" onclick="openImg(this.src)">
 </div>
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232">
-<div class="overlay">Residential Installations</div>
-</div>
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b">
-<div class="overlay">Panel Upgrades</div>
-</div>
-
-</div>
-
 </section>
 
-<section>
-
-<h2 class="title">Company Stats</h2>
-
-<div class="stats">
-
-<div class="stat">
-<h3 id="projectsDone">0</h3>
-<p>Projects Completed</p>
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+<img id="lightbox-img">
 </div>
-
-<div class="stat">
-<h3 id="clients">0</h3>
-<p>Happy Clients</p>
-</div>
-
-<div class="stat">
-<h3 id="experience">0</h3>
-<p>Years Experience</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">Client Testimonials</h2>
-
-<div class="testimonials">
-
-<p class="testimonial active">Excellent service and professional workmanship.</p>
-<p class="testimonial">Reliable electricians with fast response time.</p>
-<p class="testimonial">High quality installations and great support.</p>
-
-</div>
-
-</section>
 
 <section id="contact">
+<h2 class="title">Contact Us</h2>
 
-<h2 class="title">Request A Quote</h2>
+<div class="contact-box">
+<p>📞 081 XXX XXXX</p>
+<p>📧 info@africorepower.co.za</p>
+<p>📍 Johannesburg, South Africa</p>
+</div>
+
+<br><br>
 
 <div class="quote-form">
-
 <input type="text" placeholder="Name">
 <input type="email" placeholder="Email">
 <input type="text" placeholder="Phone">
-<textarea placeholder="Describe the work needed"></textarea>
-
+<textarea placeholder="Describe the work"></textarea>
 <a class="btn">Submit Request</a>
+</div>
 
+<div class="map">
+<iframe src="https://maps.google.com/maps?q=Johannesburg&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300"></iframe>
 </div>
 
 </section>
 
 <footer>
-
 <p>© 2026 AfriCore Power</p>
-<p>Facebook | Instagram | LinkedIn</p>
-
 </footer>
 
 <a class="whatsapp" href="https://wa.me/">WhatsApp</a>
@@ -498,73 +391,23 @@ Electrical Installations • Electrical Maintenance • Property Maintenance •
 
 particlesJS("particles-js", {
 particles:{
-number:{value:80},
+number:{value:100},
 color:{value:"#00BFFF"},
-shape:{type:"circle"},
-opacity:{value:0.5},
-size:{value:3},
-line_linked:{
-enable:true,
-distance:150,
-color:"#00BFFF",
-opacity:0.4,
-width:1
-},
-move:{
-enable:true,
-speed:2
-}
+line_linked:{enable:true,color:"#00BFFF"},
+move:{speed:2}
 }
 })
 
-/* SCROLL REVEAL */
+/* LIGHTBOX */
 
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show")
-}
-})
-})
-
-document.querySelectorAll(".card, .project").forEach(el=>{
-observer.observe(el)
-})
-
-/* TESTIMONIAL SLIDER */
-
-let index=0
-const testimonials=document.querySelectorAll(".testimonial")
-
-setInterval(()=>{
-testimonials[index].classList.remove("active")
-index=(index+1)%testimonials.length
-testimonials[index].classList.add("active")
-},4000)
-
-/* STATS COUNTER */
-
-function counter(id,max){
-
-let element=document.getElementById(id)
-let count=0
-
-let interval=setInterval(()=>{
-
-count++
-element.innerText=count
-
-if(count==max){
-clearInterval(interval)
+function openImg(src){
+document.getElementById("lightbox").style.display="flex"
+document.getElementById("lightbox-img").src=src
 }
 
-},30)
-
+function closeImg(){
+document.getElementById("lightbox").style.display="none"
 }
-
-counter("projectsDone",250)
-counter("clients",120)
-counter("experience",10)
 
 </script>
 
