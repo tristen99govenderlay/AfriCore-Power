@@ -10,6 +10,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 <style>
 
 /* GLOBAL */
@@ -30,6 +32,17 @@ background-size:cover;
 background-position:center;
 background-attachment:fixed;
 color:white;
+}
+
+/* PARTICLES LAYER */
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
 }
 
 /* NAVBAR */
@@ -238,6 +251,7 @@ border-radius:10px;
 footer{
 padding:40px;
 background:#000;
+text-align:center; /* centered as requested */
 }
 
 /* WHATSAPP */
@@ -254,11 +268,28 @@ text-decoration:none;
 font-weight:bold;
 }
 
+/* SUBTLE 3D EFFECT */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:radial-gradient(circle at 30% 30%, rgba(0,191,255,0.08), transparent 60%),
+radial-gradient(circle at 70% 70%, rgba(0,191,255,0.05), transparent 60%);
+z-index:-1;
+pointer-events:none;
+}
+
 </style>
 
 </head>
 
 <body>
+
+<div id="particles-js"></div>
 
 <header>
 <div class="logo">
@@ -360,6 +391,33 @@ width="100%" height="300"></iframe>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/">WhatsApp</a>
+
+<script>
+
+/* YOUR EXACT PARTICLES (unchanged) */
+
+particlesJS("particles-js", { 
+particles:{
+number:{value:80},
+color:{value:"#00BFFF"},
+shape:{type:"circle"},
+opacity:{value:0.5},
+size:{value:3},
+line_linked:{
+enable:true,
+distance:150,
+color:"#00BFFF",
+opacity:0.4,
+width:1
+},
+move:{
+enable:true,
+speed:2
+}
+}
+})
+
+</script>
 
 </body>
 </html>
