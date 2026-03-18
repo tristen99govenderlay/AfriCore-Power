@@ -394,12 +394,27 @@ width="100%" height="300"></iframe>
 
 /* PARTICLES */
 
+particlesJS("particles-js", {
 particles:{
-number:{value:40},   // LESS particles
-opacity:{value:0.2}, // more transparent
-size:{value:2},      // smaller
-move:{speed:1}       // slower
+number:{value:80},
+color:{value:"#00BFFF"},
+shape:{type:"circle"},
+opacity:{value:0.5},
+size:{value:3},
+line_linked:{
+enable:true,
+distance:150,
+color:"#00BFFF",
+opacity:0.4,
+width:1
+},
+move:{
+enable:true,
+speed:2
 }
+}
+})
+
 
 
 /* LIGHTBOX */
